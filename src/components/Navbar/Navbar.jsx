@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className={styles.navContainer}>
         {/* Logo */}
         <div className={styles.logo}>
-          <Link to="/"><img src="/public/image.png" alt="" /></Link>
+          <Link to="/"><img src="/image.png" alt="" /></Link>
         </div>
 
         {/* Desktop Navigation */}

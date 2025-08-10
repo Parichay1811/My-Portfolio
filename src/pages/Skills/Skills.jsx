@@ -155,7 +155,7 @@ const Skills = () => {
           >
             <div className={styles.imageContainer}>
               <img
-                src="/public/side.jpg"
+                src="/side.jpg"
                 alt="Developer workspace"
                 className={styles.skillsImage}
               />
