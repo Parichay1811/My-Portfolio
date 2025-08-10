@@ -1,0 +1,175 @@
+.experience {
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #000 0%, #111 100%);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00f5ff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.experienceList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.experienceCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.experienceCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #00f5ff, #ff00ff);
+}
+
+.experienceCard:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 245, 255, 0.1);
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.companyInfo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.companyLogo {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.companyDetails {
+  flex: 1;
+}
+
+.companyName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.position {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #00f5ff;
+  margin-bottom: 0.5rem;
+}
+
+.duration {
+  font-size: 1rem;
+  color: #ccc;
+  font-weight: 400;
+}
+
+.cardBody {
+  padding-left: 0;
+}
+
+.descriptionList {
+  list-style: none;
+  padding: 0;
+}
+
+.descriptionItem {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.descriptionItem::before {
+  content: "▶";
+  position: absolute;
+  left: 0;
+  color: #00f5ff;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .companyInfo {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .companyLogo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .experienceCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .companyName {
+    font-size: 1.3rem;
+  }
+
+  .position {
+    font-size: 1.1rem;
+  }
+}

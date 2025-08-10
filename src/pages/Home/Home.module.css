@@ -1,0 +1,196 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 90px;
+  background: linear-gradient(135deg, #000 0%, #000000 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  height: 100%; /* Fill container height */
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.animatedText {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(45deg, #00f5ff, #ff00ff, #00ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 300% 300%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+.menuHint {
+  display: none;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Show only on small screens */
+@media (max-width: 768px) {
+  .menuHint {
+    display: block;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.cursor {
+  color: #00f5ff;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.cvButton {
+  background: linear-gradient(45deg, #00f5ff, #ff00ff);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+.cvButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cvButton:hover::before {
+  left: 100%;
+}
+
+.cvButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.3);
+}
+
+.imageSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 0;
+  overflow: hidden;
+  border: none;
+}
+
+.profileImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.imageOverlay {
+  display: none;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .animatedText {
+    font-size: 2.5rem;
+  }
+
+  .textSection {
+    order: 1;
+  }
+
+  .imageSection {
+    order: 2;
+    display: flex;
+  }
+
+  .cvButton {
+    order: 3;
+    margin: 0 auto;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .animatedText {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .cvButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}
