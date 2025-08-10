@@ -34,6 +34,7 @@ const Skills = () => {
     {
       category: "Cloud & DevOps",
       skills: [
+        { name: "AWS", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" },
         { name: "AWS EC2", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
         { name: "AWS S3", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
         { name: "AWS Lambda", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
@@ -45,7 +46,7 @@ const Skills = () => {
       category: "Tools & Others",
       skills: [
         { name: "Git", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
-        { name: "GitHub", logo: "/public/github.png" },
+        { name: "GitHub", logo: "/github.png" },
         { name: "GitHub Actions", logo: "https://avatars.githubusercontent.com/u/44036562?s=200&v=4" },
         { name: "Postman", logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
         { name: "Thunder Client", logo: "https://avatars.githubusercontent.com/u/73558520?s=200&v=4" },
@@ -66,8 +67,8 @@ const Skills = () => {
         { name: "REST APIs", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" },
         { name: "Chart.js", logo: "https://www.chartjs.org/media/logo-title.svg" },
         { name: "JWT Auth", logo: "https://jwt.io/img/pic_logo.svg" },
-        { name: "Responsive Design", logo: "/public/res.png" },
-        { name: "Chrome DevTools", logo: "/public/dev.png" },
+        { name: "Responsive Design", logo: "/res.png" },
+        { name: "Chrome DevTools", logo: "/dev.png" },
       ],
     },
   ]
