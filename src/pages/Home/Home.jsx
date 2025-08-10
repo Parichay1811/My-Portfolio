@@ -81,7 +81,7 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.5 }}
             >
-              Passionate about creating innovative web solutions and bringing ideas to life through code.
+              Passionate about creating innovative web solutions and bringing ideas to life through code. I don't just write code, I craft solutions that inspire and influence☺️. A "Problem Solver"
             </motion.p>
 
             <motion.button
