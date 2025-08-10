@@ -7,7 +7,7 @@ const Experience = () => {
     {
       id: 1,
       company: "Geekster",
-      logo: "/public/g.png",
+      logo: "/g.png",
       position: "Student Trainee",
       duration: "May 2024 - Present",
       description: [
@@ -20,7 +20,7 @@ const Experience = () => {
     {
       id: 2,
       company: "Viral Me",
-      logo: "/public/Viral Me.jpg",
+      logo: "/Viral Me.jpg",
       position: "Junior Software Engineer (Freelance)",
       duration: "June 2023 - April 2024",
       description: [
