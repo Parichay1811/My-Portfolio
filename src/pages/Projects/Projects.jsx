@@ -32,7 +32,7 @@ const Projects = () => {
         " Built a responsive image gallery using React.js with infinite scrolling functionality, where images load dynamically as the user scrolls. Implemented the Intersection Observer API to fetch data in batches from an external API, ensuring optimized performance and reduced load times. Designed an intuitive UI with smooth transitions for a seamless user experience.",
       image: "/image copy 2.png",
       technologies: ["JavaScript", "HTML", "CSS", "Intersection Observer API", "External Image API (e.g., Unsplash API)"],
-      liveDemo: "https://parichay1811.github.io/Portfolio/",
+      liveDemo: "https://infinite-scroll-kappa-jet.vercel.app/",
       sourceCode: "https://github.com/Parichay1811/Infinite-scroll",
     },
   ]
