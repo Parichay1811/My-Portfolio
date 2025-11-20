@@ -22,13 +22,14 @@ const Skills = () => {
         { name: "HTML", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" },
         { name: "CSS", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" },
         { name: "Tailwind", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
+        { name: "Framer Motion", logo: "/framer-motion.svg" },
       ],
     },
     {
       category: "Backend",
       skills: [
         { name: "Node.js", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" },
-        { name: "Express.js", logo: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" },
+        { name: "Express.js", logo: "/express.jpg" },
         
       ],
     },
@@ -42,7 +43,7 @@ const Skills = () => {
     {
       category: "Cloud & DevOps",
       skills: [
-        { name: "AWS", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" },
+        { name: "AWS", logo: "/aws.png" },
         { name: "AWS EC2", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
         { name: "AWS S3", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
         { name: "AWS Lambda", logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg" },
@@ -57,7 +58,7 @@ const Skills = () => {
         { name: "GitHub", logo: "/github.png" },
         { name: "GitHub Actions", logo: "https://avatars.githubusercontent.com/u/44036562?s=200&v=4" },
         { name: "Postman", logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
-        { name: "Thunder Client", logo: "https://avatars.githubusercontent.com/u/73558520?s=200&v=4" },
+        { name: "Thunder Client", logo: "/thunder.jpg" },
       ],
     },
     {
@@ -66,7 +67,7 @@ const Skills = () => {
         { name: "TensorFlow", logo: "https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" },
         { name: "PyTorch", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" },
         { name: "ChatGPT 4o", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
-        { name: "Claude Sonnet 3", logo: "https://avatars.githubusercontent.com/u/129559962?s=200&v=4" },
+        { name: "Claude Sonnet 3", logo: "/claude.jpg" },
       ],
     },
     {
