@@ -40,7 +40,7 @@ const Home = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a")
-    link.href = "/Parichay Dutta Biswas.pdf"
+    link.href = "/Parichay Dutta Biswas(1).pdf"
     link.download = "Parichay Dutta Biswas.pdf"
     link.click()
   }

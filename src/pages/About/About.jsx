@@ -41,7 +41,7 @@ const About = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
         >
-          Full Stack Web Developer with expertise in building scalable, high-performance, and user-focused web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). Skilled at translating complex requirements into clean, maintainable, and efficient code across both front-end and back-end, with proficiency in JavaScript (ES6+), RESTful APIs, Git, Docker, and AWS. Adept at creating responsive, accessible, and visually engaging interfaces, optimizing application performance, and ensuring code quality through best practices. Experienced in Agile environments, collaborating with cross-functional teams to deliver innovative and future-ready digital solutions.
+          I am a motivated Full Stack Web Developer with 0–1 year of hands-on experience in building responsive, scalable, and user-focused web applications. My core expertise lies in React.js, HTML5/CSS3, JavaScript, Node.js, and Express.js, along with strong fundamentals in Java and Python. I work confidently with REST APIs, MongoDB, Firebase, and AWS to deliver full-stack solutions that perform reliably in real.
         </motion.p>
 
       </div>
