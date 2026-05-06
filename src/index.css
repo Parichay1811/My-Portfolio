@@ -1,4 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap");
+
+:root {
+  --bg-primary: #050a0e;
+  --bg-secondary: #081420;
+  --bg-card: rgba(8, 20, 32, 0.95);
+  --bg-card-hover: rgba(12, 28, 44, 0.98);
+  --cyan: #00f5ff;
+  --cyan-mid: #00c8d8;
+  --cyan-dim: rgba(0, 245, 255, 0.12);
+  --cyan-glow-sm: rgba(0, 245, 255, 0.25);
+  --cyan-glow-md: rgba(0, 245, 255, 0.4);
+  --cyan-glow-lg: rgba(0, 245, 255, 0.6);
+  --border: rgba(0, 245, 255, 0.15);
+  --border-active: rgba(0, 245, 255, 0.5);
+  --text-primary: #e0f4f8;
+  --text-secondary: #6fa8b2;
+  --text-muted: #3a6570;
+  --font-display: 'Orbitron', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-body: 'Poppins', sans-serif;
+}
 
 * {
   margin: 0;
@@ -6,31 +27,47 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #000000;
-  color: #fff;
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  color: var(--text-primary);
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
 }
 
-/* Scrollbar styling */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--bg-primary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
+  background: linear-gradient(180deg, var(--cyan), #007a8a);
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan);
+}
+
+/* Text Selection */
+::selection {
+  background: rgba(0, 245, 255, 0.2);
+  color: var(--cyan);
 }
