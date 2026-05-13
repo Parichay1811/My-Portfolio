@@ -9,18 +9,18 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      company: "Viral Me",
-      logo: "/Viral Me.jpg",
-      position: "Junior Software Engineer",
-      type: "FREELANCE",
-      duration: "June 2023 - April 2024",
+      company: "Futuresight Analytics",
+      logo: "/flogo.png",
+      position: "Web Development Consultant",
+      type: "DEVELOPER",
+      duration: "Aug 2025 - Present",
       description: [
-        "Built and deployed responsive, real-time web applications using React.js, Node.js, and MongoDB.",
-        "Improved app performance by 30% and reduced deployment times by 25% through effective CI/CD integration.",
-        "Enhanced modularity in the backend architecture, improving scalability and maintainability.",
-        "Collaborated in an Agile environment to meet project deadlines with high code quality.",
-        "Used Docker, AWS EC2/S3, and GitHub Actions for seamless deployments and version control.",
-      ],
+        "Led development of an AI-powered learning platform improving accessibility for dyslexic users through simplified UI/UX and adaptive content delivery.",
+        "Designed a modular React architecture, reducing component re-renders and improving frontend performance by 25%.",
+        "Developed secure REST APIs using Node.js and Express with JWT-based authentication and RBAC, ensuring scalable and secure access control.",
+        "Integrated LLM APIs to automate content generation and personalized learning flows, reducing manual effort by 40%.",
+        "Resolved critical authentication and session issues, improving system reliability and reducing login failures."
+      ], 
     },
     {
       id: 2,
@@ -38,17 +38,17 @@ const Experience = () => {
     },
     {
       id: 3,
-      company: "Futuresight Analytics",
-      logo: "/flogo.png",
-      position: "Web Development Consultant",
-      type: "DEVELOPER",
-      duration: "Aug 2025 - Present",
+      company: "Viral Me",
+      logo: "/Viral Me.jpg",
+      position: "Junior Software Engineer",
+      type: "FREELANCE",
+      duration: "June 2023 - April 2024",
       description: [
-        "Led development of an AI-powered learning platform improving accessibility for dyslexic users through simplified UI/UX and adaptive content delivery.",
-        "Designed a modular React architecture, reducing component re-renders and improving frontend performance by 25%.",
-        "Developed secure REST APIs using Node.js and Express with JWT-based authentication and RBAC, ensuring scalable and secure access control.",
-        "Integrated LLM APIs to automate content generation and personalized learning flows, reducing manual effort by 40%.",
-        "Resolved critical authentication and session issues, improving system reliability and reducing login failures."
+        "Built and deployed responsive, real-time web applications using React.js, Node.js, and MongoDB.",
+        "Improved app performance by 30% and reduced deployment times by 25% through effective CI/CD integration.",
+        "Enhanced modularity in the backend architecture, improving scalability and maintainability.",
+        "Collaborated in an Agile environment to meet project deadlines with high code quality.",
+        "Used Docker, AWS EC2/S3, and GitHub Actions for seamless deployments and version control.",
       ],
     },
   ]

@@ -9,6 +9,35 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "AI powered Interview practice website",
+      subtitle: "AI-Powered Mock Interview Platform",
+      description:
+        "Full-stack AI-powered mock interview SaaS platform with resume-based question generation, real-time voice interviews, AI feedback reports, PDF export, Razorpay payments, and secure JWT authentication.",
+      image: "/ai-interviewer.png",
+      technologies: [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Redux Toolkit",
+        "Firebase Authentication",
+        "Node.js",
+        "Express.js",
+        "MongoDB Atlas",
+        "Mongoose",
+        "JWT",
+        "Razorpay",
+        "OpenRouter AI",
+        "Multer",
+        "pdfjs-dist",
+        "Render"
+      ],
+      liveDemo: "https://ai-interviewer-client-5jnt.onrender.com",
+      sourceCode: "https://github.com/Parichay1811/AI-interviewer",
+      status: "DEPLOYED",
+    },
+    {
+      id: 2,
       title: "Food Express",
       subtitle: "Food Delivery App",
       description:
@@ -20,7 +49,7 @@ const Projects = () => {
       status: "DEPLOYED",
     },
     {
-      id: 2,
+      id: 3,
       title: "Expense Tracker",
       subtitle: "AI-Powered Finance Tool",
       description:
@@ -32,7 +61,7 @@ const Projects = () => {
       status: "ACTIVE",
     },
     {
-      id: 3,
+      id: 4,
       title: "Infinite Scroll Gallery",
       subtitle: "Dynamic Image Gallery",
       description:
