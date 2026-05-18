@@ -28,14 +28,16 @@ const Skills = () => {
         { name: "CSS", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" },
         { name: "Tailwind", logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" },
         { name: "Framer Motion", logo: "/framer-motion.svg" },
+        { name: "typescript", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
       ],
     },
     {
       category: "Backend",
       icon: <FiGlobe />,
       skills: [
-        { name: "Node.js", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" },
+        { name: "Node.js", logo: "https://icons.veryicon.com/png/o/business/vscode-program-item-icon/nodejs-4.png" },
         { name: "Express.js", logo: "/express.jpg" },
+        { name: "cors", logo: "https://icons.veryicon.com/png/o/miscellaneous/apisix/cors-1.png" },
       ],
     },
     {
@@ -66,7 +68,10 @@ const Skills = () => {
         { name: "GitHub", logo: "/github.png" },
         { name: "GitHub Actions", logo: "https://avatars.githubusercontent.com/u/44036562?s=200&v=4" },
         { name: "Postman", logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" },
+        { name: "jira", logo: "https://icons.veryicon.com/png/o/application/app-icon-7/jira-5.png" },
         { name: "Thunder Client", logo: "/thunder.jpg" },
+        { name: "jenkins", logo: "https://icons.veryicon.com/png/o/business/vscode-program-item-icon/jenkins-2.png" },
+        { name: "ci/cd", logo: "/cicd.svg" },
       ],
     },
     {
@@ -76,7 +81,7 @@ const Skills = () => {
         { name: "TensorFlow", logo: "https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" },
         { name: "PyTorch", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" },
         { name: "ChatGPT 4o", logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
-        { name: "Claude Sonnet 3", logo: "/claude.jpg" },
+        { name: "Claude Sonnet 4.6", logo: "/claude.jpg" },
       ],
     },
     {
@@ -86,7 +91,7 @@ const Skills = () => {
         { name: "REST APIs", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" },
         { name: "Chart.js", logo: "https://www.chartjs.org/media/logo-title.svg" },
         { name: "JWT Auth", logo: "https://jwt.io/img/pic_logo.svg" },
-        { name: "Responsive Design", logo: "/res.png" },
+        { name: "Responsive Design", logo: "https://icons.veryicon.com/png/o/application/application-and-product-feature-icons/responsive.png" },
         { name: "Chrome DevTools", logo: "/dev.png" },
       ],
     },
@@ -184,7 +189,7 @@ const Skills = () => {
               <div className={styles.imgCornerBR}></div>
               <div className={styles.imgScanBeam}></div>
               <img
-                src="/side.jpg"
+                src="/side.png"
                 alt="Developer workspace"
                 className={styles.skillsImage}
               />
