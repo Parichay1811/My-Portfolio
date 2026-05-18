@@ -48,8 +48,8 @@ const Home = () => {
 
   const stats = [
     { icon: <FiCode />, value: "3+", label: "PROJECTS" },
-    { icon: <FiCpu />, value: "8+", label: "SKILLS" },
-    { icon: <BsBracesAsterisk />, value: "1+", label: "YRS EXP" },
+    { icon: <FiCpu />, value: "10+", label: "SKILLS" },
+    { icon: <BsBracesAsterisk />, value: "2+", label: "YRS EXP" },
     { icon: <RiRobot2Fill />, value: "2+", label: "COMPANIES" },
   ]
 
