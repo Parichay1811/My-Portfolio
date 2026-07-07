@@ -1,0 +1,115 @@
+.wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: transparent;
+}
+
+.canvas {
+  position: absolute !important;
+  inset: 0;
+}
+
+.meshGradient {
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0, 245, 255, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(0, 229, 255, 0.1), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(0, 245, 255, 0.08), transparent 50%);
+  animation: meshDrift 22s ease-in-out infinite;
+  filter: blur(10px);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 245, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 100%, #000 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 100%, #000 40%, transparent 90%);
+}
+
+.beam {
+  position: absolute;
+  width: 2px;
+  height: 140%;
+  top: -20%;
+  background: linear-gradient(180deg, transparent, rgba(0, 245, 255, 0.5), rgba(0, 229, 255, 0.15), transparent);
+  filter: blur(3px);
+  animation: beamDrift 16s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+.beam1 {
+  left: 12%;
+  --beam-angle: 12deg;
+  animation-duration: 17s;
+}
+
+.beam2 {
+  left: 55%;
+  --beam-angle: -8deg;
+  animation-duration: 21s;
+  animation-delay: -4s;
+}
+
+.beam3 {
+  left: 85%;
+  --beam-angle: 18deg;
+  animation-duration: 19s;
+  animation-delay: -9s;
+}
+
+.cursorGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 280px at var(--mx, 50%) var(--my, 50%), rgba(0, 245, 255, 0.09), transparent 70%);
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 85% 85% at 50% 40%, transparent 45%, rgba(5, 5, 5, 0.6) 100%);
+}
+
+@keyframes meshDrift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(2%, -3%) scale(1.05);
+  }
+  66% {
+    transform: translate(-2%, 2%) scale(0.98);
+  }
+}
+
+@keyframes beamDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(var(--beam-angle, 20deg));
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(4%, -6%, 0) rotate(var(--beam-angle, 20deg));
+    opacity: 0.6;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meshGradient,
+  .beam {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .beam3 {
+    display: none;
+  }
+}

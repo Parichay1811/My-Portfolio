@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap");
 
 :root {
-  --bg-primary: #050a0e;
-  --bg-secondary: #081420;
-  --bg-card: rgba(8, 20, 32, 0.95);
-  --bg-card-hover: rgba(12, 28, 44, 0.98);
+  --bg-primary: #050505;
+  --bg-secondary: #0a0a0a;
+  --bg-card: rgba(10, 10, 10, 0.55);
+  --bg-card-hover: rgba(14, 14, 16, 0.68);
   --cyan: #00f5ff;
+  --cyan-2: #00e5ff;
   --cyan-mid: #00c8d8;
   --cyan-dim: rgba(0, 245, 255, 0.12);
   --cyan-glow-sm: rgba(0, 245, 255, 0.25);
@@ -19,6 +20,15 @@
   --font-display: 'Orbitron', sans-serif;
   --font-mono: 'Share Tech Mono', monospace;
   --font-body: 'Poppins', sans-serif;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(10, 10, 10, 0.45);
+  --glass-bg-strong: rgba(8, 8, 10, 0.65);
+  --glass-border: rgba(0, 245, 255, 0.18);
+  --glass-border-hover: rgba(0, 245, 255, 0.45);
+  --glass-blur: 18px;
+  --glass-blur-sm: 10px;
+  --shadow-elevate: 0 8px 32px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 245, 255, 0.04);
 }
 
 * {
@@ -35,9 +45,12 @@ body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
   background-image:
+    radial-gradient(ellipse 900px 600px at 15% -10%, rgba(0, 245, 255, 0.08), transparent 60%),
+    radial-gradient(ellipse 900px 700px at 100% 10%, rgba(0, 229, 255, 0.06), transparent 60%),
     linear-gradient(rgba(0, 245, 255, 0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 245, 255, 0.025) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+  background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -45,6 +58,20 @@ body {
 
 #root {
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Reduced motion: calm the whole site down site-wide */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Custom Scrollbar */

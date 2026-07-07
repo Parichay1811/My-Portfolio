@@ -65,11 +65,11 @@ const Contact = () => {
         >
           <div className={styles.sectionTag}>
             <RiRobot2Fill className={styles.tagIcon} />
-            <span>COMMS_CHANNEL.SYS</span>
+            <span>CONNECT</span>
           </div>
           <h1 className={styles.title}>CONTACT ME</h1>
           <div className={styles.titleBar}></div>
-          <p className={styles.subtitle}>Establish a connection and transmit your message</p>
+          <p className={styles.subtitle}>Send me a message and I'll get back to you</p>
         </motion.div>
 
         {/* Content */}
@@ -79,8 +79,9 @@ const Contact = () => {
           <motion.div
             className={styles.contactInfo}
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
           >
             <div className={styles.infoTopBar}></div>
             <div className={styles.infoCornerTL}></div>
@@ -120,7 +121,7 @@ const Contact = () => {
             <div className={styles.availabilityPanel}>
               <div className={styles.availDot}></div>
               <div>
-                <div className={styles.availTitle}>AVAILABILITY_STATUS</div>
+                <div className={styles.availTitle}>AVAILABILITY</div>
                 <div className={styles.availValue}>OPEN TO OPPORTUNITIES</div>
               </div>
             </div>
@@ -130,13 +131,14 @@ const Contact = () => {
           <motion.div
             className={styles.formSection}
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className={styles.formTopBar}></div>
             <div className={styles.formHeader}>
               <FiTerminal className={styles.formTermIcon} />
-              <span>TRANSMIT_MESSAGE.SYS</span>
+              <span>SEND A MESSAGE</span>
             </div>
 
             <form onSubmit={handleSubmit} className={styles.contactForm}>
@@ -144,7 +146,7 @@ const Contact = () => {
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>
                   <FaUser className={styles.labelIcon} />
-                  INPUT_NAME
+                  NAME
                 </label>
                 <div className={styles.inputWrapper}>
                   <input
@@ -163,7 +165,7 @@ const Contact = () => {
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>
                   <FaBuilding className={styles.labelIcon} />
-                  INPUT_ORGANIZATION
+                  ORGANIZATION
                 </label>
                 <div className={styles.inputWrapper}>
                   <input
@@ -182,7 +184,7 @@ const Contact = () => {
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>
                   <FaMessage className={styles.labelIcon} />
-                  INPUT_MESSAGE
+                  MESSAGE
                 </label>
                 <div className={styles.inputWrapper}>
                   <textarea
@@ -208,12 +210,12 @@ const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <span className={styles.loadingDot}></span>
-                    TRANSMITTING...
+                    SENDING...
                   </>
                 ) : (
                   <>
                     <FiSend className={styles.submitIcon} />
-                    TRANSMIT_MESSAGE
+                    SEND MESSAGE
                   </>
                 )}
               </motion.button>
@@ -226,7 +228,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                 >
                   <BsCheckCircleFill className={styles.msgIcon} />
-                  [SUCCESS] — Transmission received. Will respond shortly.
+                  Message sent successfully — I'll get back to you shortly.
                 </motion.div>
               )}
 
@@ -237,7 +239,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                 >
                   <BsXCircleFill className={styles.msgIcon} />
-                  [ERROR] — Transmission failed. Try again or email directly.
+                  Something went wrong. Please try again or email me directly.
                 </motion.div>
               )}
             </form>

@@ -76,11 +76,11 @@ const Experience = () => {
         >
           <div className={styles.sectionTag}>
             <FiBriefcase className={styles.tagIcon} />
-            <span>WORK_LOG.SYS</span>
+            <span>WORK HISTORY</span>
           </div>
           <h1 className={styles.title}>EXPERIENCE</h1>
           <div className={styles.titleBar}></div>
-          <p className={styles.subtitle}>Professional mission history and deployments</p>
+          <p className={styles.subtitle}>A timeline of my professional roles and contributions</p>
         </motion.div>
 
         {/* Timeline */}
@@ -88,10 +88,18 @@ const Experience = () => {
           className={styles.timeline}
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
         >
           {/* Vertical line */}
-          <div className={styles.timelineLine}></div>
+          <motion.div
+            className={styles.timelineLine}
+            style={{ transformOrigin: "top" }}
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          ></motion.div>
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -107,7 +115,8 @@ const Experience = () => {
               {/* Card */}
               <motion.div
                 className={styles.experienceCard}
-                whileHover={{ x: 6 }}
+                whileHover={{ x: 6, rotateX: 2, rotateY: -2 }}
+                style={{ transformStyle: "preserve-3d" }}
                 transition={{ duration: 0.2 }}
               >
                 {/* Card top bar */}
@@ -146,7 +155,7 @@ const Experience = () => {
                 <div className={styles.cardBody}>
                   <div className={styles.bodyHeader}>
                     <BsTerminalFill className={styles.bodyIcon} />
-                    <span>MISSION_REPORT</span>
+                    <span>KEY CONTRIBUTIONS</span>
                   </div>
                   <ul className={styles.descriptionList}>
                     {exp.description.map((item, idx) => (

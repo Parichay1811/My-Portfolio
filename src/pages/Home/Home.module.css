@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   padding-top: 80px;
-  background: var(--bg-primary, #050a0e);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -155,16 +155,19 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0.75rem 1rem;
-  background: rgba(0, 245, 255, 0.04);
-  border: 1px solid rgba(0, 245, 255, 0.15);
+  background: var(--glass-bg, rgba(10, 10, 10, 0.45));
+  backdrop-filter: blur(var(--glass-blur-sm, 10px));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm, 10px));
+  border: 1px solid var(--glass-border, rgba(0, 245, 255, 0.15));
   min-width: 80px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .statItem:hover {
-  background: rgba(0, 245, 255, 0.08);
-  border-color: rgba(0, 245, 255, 0.4);
-  box-shadow: 0 0 14px rgba(0, 245, 255, 0.15);
+  background: var(--glass-bg-strong, rgba(14, 14, 16, 0.68));
+  border-color: var(--glass-border-hover, rgba(0, 245, 255, 0.4));
+  box-shadow: 0 0 14px rgba(0, 245, 255, 0.18), 0 6px 16px rgba(0, 0, 0, 0.35);
+  transform: translateY(-3px);
 }
 
 .statIcon {
@@ -225,10 +228,37 @@
   transform: translateX(100%);
 }
 
+.cvButton::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 245, 255, 0.9), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cvButton:active::after {
+  animation: cvRipple 0.6s ease-out;
+}
+
+@keyframes cvRipple {
+  0% { transform: scale(0); opacity: 0.65; }
+  100% { transform: scale(14); opacity: 0; }
+}
+
 .cvButton:hover {
   background: rgba(0, 245, 255, 0.08);
   box-shadow: 0 0 20px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 245, 255, 0.1), inset 0 0 20px rgba(0, 245, 255, 0.05);
   text-shadow: 0 0 8px rgba(0, 245, 255, 0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cvButton:active::after { animation: none; }
 }
 
 .btnIcon {
@@ -250,6 +280,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  perspective: 1200px;
 }
 
 .imageFrame {
@@ -260,6 +291,42 @@
   border: 1px solid rgba(0, 245, 255, 0.2);
   box-shadow: 0 0 30px rgba(0, 245, 255, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.5);
   animation: glowPulse 3s ease-in-out infinite;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+}
+
+.imageFrame:hover {
+  transform: rotateY(7deg) rotateX(-5deg) scale(1.02) translateZ(6px);
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.22), 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.imageFrame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: conic-gradient(from var(--angle), transparent, #00f5ff, transparent 30%, transparent 70%, #00e5ff, transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: gradientBorderSpin 6s linear infinite;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.imageFrame:hover::before {
+  opacity: 1;
+}
+
+@keyframes gradientBorderSpin {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .imageFrame::before { animation: none; }
 }
 
 @keyframes glowPulse {
