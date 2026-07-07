@@ -54,7 +54,7 @@ const Navbar = () => {
         <div className={styles.statusBadge}>
           <RiSignalWifiFill className={styles.statusIcon} />
           <span className={styles.statusDot}></span>
-          <span className={styles.statusText}>ONLINE</span>
+          <span className={styles.statusText}>AVAILABLE</span>
         </div>
 
         {/* Desktop Nav Links */}
@@ -98,7 +98,7 @@ const Navbar = () => {
       <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.mobileMenuOpen : ""}`}>
         <div className={styles.mobileHeader}>
           <FiTerminal className={styles.mobileTermIcon} />
-          <span>NAV_MENU.SYS</span>
+          <span>MENU</span>
         </div>
         <div className={styles.mobileNavLinks}>
           {navLinks.map((link, index) => (

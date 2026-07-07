@@ -94,3 +94,13 @@ body {
 .fade-in-up { animation: fadeInUp 0.8s ease-out; }
 .slide-in-left { animation: slideInLeft 0.8s ease-out; }
 .slide-in-right { animation: slideInRight 0.8s ease-out; }
+
+/* Registers --angle as an animatable <angle> so per-module conic-gradient
+   "spinning border" rules (each declares its own local @keyframes that
+   steps this custom property, per this codebase's CSS-Modules convention
+   of not sharing @keyframes across files) actually animate smoothly. */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}

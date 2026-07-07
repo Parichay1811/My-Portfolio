@@ -125,11 +125,11 @@ const Skills = () => {
         >
           <div className={styles.sectionTag}>
             <FiCpu className={styles.tagIcon} />
-            <span>TECH_STACK.SYS</span>
+            <span>TECH STACK</span>
           </div>
           <h1 className={styles.title}>SKILLS</h1>
           <div className={styles.titleBar}></div>
-          <p className={styles.subtitle}>Technologies and tools loaded into the system</p>
+          <p className={styles.subtitle}>Technologies and tools I work with</p>
         </motion.div>
 
         {/* Content */}
@@ -138,7 +138,8 @@ const Skills = () => {
             className={styles.skillsGrid}
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.05 }}
           >
             {skillCategories.map((category, categoryIndex) => (
               <motion.div
@@ -152,7 +153,7 @@ const Skills = () => {
                 <div className={styles.categoryHeader}>
                   <span className={styles.categoryIcon}>{category.icon}</span>
                   <h3 className={styles.categoryTitle}>{category.category}</h3>
-                  <span className={styles.categoryIndex}>MODULE_{String(categoryIndex + 1).padStart(2, "0")}</span>
+                  <span className={styles.categoryIndex}>{String(categoryIndex + 1).padStart(2, "0")}</span>
                 </div>
 
                 <div className={styles.skillsContainer}>
@@ -161,8 +162,9 @@ const Skills = () => {
                       key={skillIndex}
                       className={styles.skillCard}
                       variants={skillVariants}
-                      whileHover={{ scale: 1.08, y: -4 }}
+                      whileHover={{ scale: 1.08, y: -4, rotateX: 8 }}
                       whileTap={{ scale: 0.95 }}
+                      style={{ transformStyle: "preserve-3d" }}
                     >
                       <img
                         src={skill.logo}
@@ -181,8 +183,9 @@ const Skills = () => {
           <motion.div
             className={styles.imageSection}
             initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className={styles.imageContainer}>
               <div className={styles.imgCornerTL}></div>
@@ -197,7 +200,7 @@ const Skills = () => {
             </div>
             <div className={styles.imageLabel}>
               <span className={styles.labelDot}></span>
-              <span>DEV_WORKSPACE</span>
+              <span>WORKSPACE</span>
             </div>
           </motion.div>
         </div>

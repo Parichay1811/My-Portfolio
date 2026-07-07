@@ -1,7 +1,7 @@
 .aboutSection {
   min-height: 100vh;
   padding: 110px 2rem 80px;
-  background: var(--bg-primary, #050a0e);
+  background: transparent;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -59,6 +59,16 @@
   text-shadow: 0 0 25px rgba(0, 245, 255, 0.4), 0 0 50px rgba(0, 245, 255, 0.1);
   letter-spacing: 4px;
   margin-bottom: 1rem;
+  animation: titleReveal 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes titleReveal {
+  0% { clip-path: inset(0 100% 0 0); filter: blur(6px); }
+  100% { clip-path: inset(0 0 0 0); filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title { animation: none; }
 }
 
 .titleBar {
@@ -83,6 +93,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  perspective: 1200px;
 }
 
 .cyberFrame {
@@ -93,6 +104,42 @@
   box-shadow: 0 0 30px rgba(0, 245, 255, 0.1), 0 0 60px rgba(0, 245, 255, 0.05);
   overflow: hidden;
   animation: glowPulse 3s ease-in-out infinite;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease;
+}
+
+.cyberFrame:hover {
+  transform: rotateY(-7deg) rotateX(5deg) scale(1.02) translateZ(6px);
+  box-shadow: 0 0 40px rgba(0, 245, 255, 0.2), 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.cyberFrame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: conic-gradient(from var(--angle), transparent, #00f5ff, transparent 30%, transparent 70%, #00e5ff, transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: gradientBorderSpin 6s linear infinite;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.cyberFrame:hover::after {
+  opacity: 1;
+}
+
+@keyframes gradientBorderSpin {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cyberFrame::after { animation: none; }
 }
 
 @keyframes glowPulse {
@@ -179,7 +226,9 @@
   letter-spacing: 2px;
   padding: 0.3rem 0.8rem;
   border: 1px solid rgba(0, 245, 255, 0.12);
-  background: rgba(0, 245, 255, 0.04);
+  background: var(--glass-bg, rgba(10, 10, 10, 0.45));
+  backdrop-filter: blur(var(--glass-blur-sm, 10px));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm, 10px));
 }
 
 .statusDot {
@@ -220,18 +269,20 @@
   align-items: center;
   gap: 1rem;
   padding: 0.9rem 1.2rem;
-  background: rgba(0, 245, 255, 0.03);
+  background: var(--glass-bg, rgba(10, 10, 10, 0.45));
+  backdrop-filter: blur(var(--glass-blur-sm, 10px));
+  -webkit-backdrop-filter: blur(var(--glass-blur-sm, 10px));
   border: 1px solid rgba(0, 245, 255, 0.1);
   border-left: 2px solid rgba(0, 245, 255, 0.3);
   transition: all 0.3s ease;
 }
 
 .dataRow:hover {
-  background: rgba(0, 245, 255, 0.07);
+  background: var(--glass-bg-strong, rgba(14, 14, 16, 0.68));
   border-color: rgba(0, 245, 255, 0.3);
   border-left-color: #00f5ff;
   box-shadow: 0 0 12px rgba(0, 245, 255, 0.08), -4px 0 12px rgba(0, 245, 255, 0.1);
-  transform: translateX(4px);
+  transform: translateX(4px) translateY(-1px);
 }
 
 .dataRow.highlight {
@@ -272,9 +323,17 @@
 
 /* Bio block */
 .bioBlock {
-  background: rgba(0, 245, 255, 0.03);
+  background: var(--glass-bg, rgba(10, 10, 10, 0.45));
+  backdrop-filter: blur(var(--glass-blur, 18px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 18px));
   border: 1px solid rgba(0, 245, 255, 0.1);
   overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bioBlock:hover {
+  border-color: rgba(0, 245, 255, 0.25);
+  box-shadow: var(--shadow-elevate, 0 8px 32px rgba(0, 0, 0, 0.55));
 }
 
 .bioHeader {

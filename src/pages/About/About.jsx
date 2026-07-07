@@ -8,7 +8,7 @@ import styles from "./About.module.css"
 
 const About = () => {
   const dataFields = [
-    { label: "OPERATOR_ID", value: "Parichay Dutta Biswas", icon: <FiUser /> },
+    { label: "NAME", value: "Parichay Dutta Biswas", icon: <FiUser /> },
     { label: "ROLE", value: "Full Stack Developer", icon: <FiCode /> },
     { label: "STACK", value: "MERN · Java · Python · AWS", icon: <FiCpu /> },
     { label: "STATUS", value: "ACTIVE — SEEKING OPPORTUNITIES", icon: <FiGlobe />, highlight: true },
@@ -27,7 +27,7 @@ const About = () => {
         >
           <div className={styles.sectionTag}>
             <RiRobot2Fill className={styles.tagIcon} />
-            <span>SYS.PROFILE</span>
+            <span>PROFILE</span>
           </div>
           <h1 className={styles.title}>ABOUT ME</h1>
           <div className={styles.titleBar}></div>
@@ -59,7 +59,7 @@ const About = () => {
             </div>
             <div className={styles.statusPanel}>
               <span className={styles.statusDot}></span>
-              <span className={styles.statusText}>SYSTEM_ONLINE</span>
+              <span className={styles.statusText}>AVAILABLE</span>
             </div>
           </motion.div>
 
@@ -77,8 +77,10 @@ const About = () => {
                   key={i}
                   className={`${styles.dataRow} ${field.highlight ? styles.highlight : ""}`}
                   initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.5, delay: 0.4 + i * 0.1 }}
+                  whileHover={{ scale: 1.015 }}
                 >
                   <span className={styles.dataIcon}>{field.icon}</span>
                   <div className={styles.dataContent}>
@@ -93,12 +95,13 @@ const About = () => {
             <motion.div
               className={styles.bioBlock}
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
             >
               <div className={styles.bioHeader}>
                 <BsTerminalFill className={styles.bioIcon} />
-                <span>bio.exe</span>
+                <span>Bio</span>
               </div>
               <p className={styles.bioText}>
                 I am a motivated Full Stack Web Developer with 0–1 year of hands-on experience

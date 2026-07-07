@@ -76,7 +76,7 @@ const Home = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <FiTerminal className={styles.termIcon} />
-              <span>INIT_SEQUENCE &gt;&gt; LOADING_PROFILE.EXE</span>
+              <span>Welcome to my portfolio</span>
             </motion.div>
 
             <motion.h1
@@ -150,7 +150,7 @@ const Home = () => {
                 whileTap={{ scale: 0.96 }}
               >
                 <FiDownload className={styles.btnIcon} />
-                DOWNLOAD_CV.EXE
+                DOWNLOAD CV
               </motion.button>
             </motion.div>
 
@@ -190,7 +190,7 @@ const Home = () => {
             </div>
             <div className={styles.imageCaption}>
               <span className={styles.captionDot}></span>
-              <span>SYSTEM_ACTIVE</span>
+              <span>AVAILABLE FOR WORK</span>
             </div>
           </motion.div>
         </motion.div>
