@@ -12,21 +12,23 @@ const Home = () => {
   const [line2, setLine2] = useState("")
   const [showStats, setShowStats] = useState(false)
   const fullLine1 = "Hi, I'm Parichay"
-  const fullLine2 = "Full Stack Developer"
+  const fullLine2 = "Full Stack Developer from India 🇮🇳";
 
   useEffect(() => {
+    const chars1 = Array.from(fullLine1)
+    const chars2 = Array.from(fullLine2)
     let index1 = 0
     let index2 = 0
 
     const timer1 = setInterval(() => {
-      if (index1 < fullLine1.length) {
-        setLine1(fullLine1.slice(0, index1 + 1))
+      if (index1 < chars1.length) {
+        setLine1(chars1.slice(0, index1 + 1).join(""))
         index1++
       } else {
         clearInterval(timer1)
         const timer2 = setInterval(() => {
-          if (index2 < fullLine2.length) {
-            setLine2(fullLine2.slice(0, index2 + 1))
+          if (index2 < chars2.length) {
+            setLine2(chars2.slice(0, index2 + 1).join(""))
             index2++
           } else {
             clearInterval(timer2)

@@ -50,7 +50,7 @@ const About = () => {
               <div className={styles.cornerBR}></div>
               <div className={styles.scanBeam}></div>
               <motion.img
-                src="/avatar.png"
+                src="/side.png"
                 alt="Parichay Dutta Biswas"
                 className={styles.profileImage}
                 whileHover={{ scale: 1.03 }}
