@@ -286,7 +286,7 @@
 .imageFrame {
   position: relative;
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   overflow: hidden;
   border: 1px solid rgba(0, 245, 255, 0.2);
   box-shadow: 0 0 30px rgba(0, 245, 255, 0.1), inset 0 0 30px rgba(0, 0, 0, 0.5);
@@ -399,7 +399,7 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-  display: block;
+  /* display: block; */
   filter: brightness(0.9) contrast(1.05);
 }
 
@@ -456,7 +456,7 @@
   }
 
   .imageFrame {
-    max-width: 240px;
+    max-width: 320px;
   }
 
   .menuHint {
@@ -477,7 +477,7 @@
   .heading1 { font-size: 1.6rem; }
   .heading2 { font-size: 1.2rem; }
   .prompt { font-size: 1.5rem; }
-  .imageFrame { max-width: 200px; }
+  .imageFrame { max-width: 260px; }
   .statValue { font-size: 1rem; }
   .cvButton { font-size: 0.7rem; padding: 0.7rem 1.1rem; letter-spacing: 1px; }
   .buttonRow { gap: 0.5rem; }

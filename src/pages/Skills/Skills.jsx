@@ -192,7 +192,7 @@ const Skills = () => {
               <div className={styles.imgCornerBR}></div>
               <div className={styles.imgScanBeam}></div>
               <img
-                src="/side.png"
+                src="/avatar.jpg"
                 alt="Developer workspace"
                 className={styles.skillsImage}
               />
