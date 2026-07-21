@@ -12,7 +12,9 @@ const Home = () => {
   const [line2, setLine2] = useState("")
   const [showStats, setShowStats] = useState(false)
   const fullLine1 = "Hi, I'm Parichay"
-  const fullLine2 = "Full Stack Developer from India 🇮🇳";
+  const line2Text = "Full Stack Developer from India "
+  const line2Flag = "🇮🇳"
+  const fullLine2 = line2Text + line2Flag;
 
   useEffect(() => {
     const chars1 = Array.from(fullLine1)
@@ -97,7 +99,8 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.8 }}
             >
-              {line2}
+              <span className={styles.heading2Text}>{line2.slice(0, line2Text.length)}</span>
+              <span className={styles.heading2Flag}>{line2.slice(line2Text.length)}</span>
               {line2.length > 0 && line2.length < fullLine2.length && (
                 <span className={styles.cursor}>█</span>
               )}
