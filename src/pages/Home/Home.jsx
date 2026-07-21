@@ -37,6 +37,7 @@ const Home = () => {
             setTimeout(() => setShowStats(true), 400)
           }
         }, 80)
+        
       }
     }, 80)
 
